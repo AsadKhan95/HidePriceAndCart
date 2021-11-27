@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="pme" translate="label" sortOrder="11">
+            <!-- nechy wali line me kal apna naam khtm krna ha lzmi -->
+            <label>PME Extension</label>
+        </tab>
+        <section id="pme_hideprice" translate="label" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Hide Price and Add to cart</label>
+            <!-- admin side py bar me show krny k lye ye zruri use hoga nechy wala tag jo ha -->
+            <tab>pme</tab>       
+            <resource>PME_Hideprice::config_hideprice</resource>
+            <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Setting</label>
+                <field id="enabled" translate="label comment" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>This works only if you choose to display out hide price.</comment>
+                </field>
+
+                <field id="customprice" translate="label" type="text"
+                    sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Custom text in place of Price</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+
+                <field id="customcart" translate="label" type="text"
+                    sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Custom text in place of Add to Cart</label>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+
+                <field id="link" translate="label" type="select"
+                    sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Link</label>
+                    <source_model>PME\Hideprice\Model\Config\Source\Link</source_model>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+
+                <field id="category" translate="label" type="multiselect"
+                    sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Hide for Product Category</label>
+                    <comment>Product price will be hidden for the selected product categories only.</comment>
+                    <source_model>PME\Hideprice\Model\Config\Source\CatList</source_model>
+                    <depends>
+                        <field id="enabled">1</field>
+                    </depends>
+                </field>
+                
+            </group>
+        </section>
+    </system>
+</config>  

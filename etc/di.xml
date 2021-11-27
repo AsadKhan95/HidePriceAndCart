@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+
+        <type name="Magento\Catalog\Pricing\Render\FinalPriceBox">
+            <plugin name="price_hide" type="PME\Hideprice\Plugin\Price"/>        
+        </type>
+
+        <type name="Magento\ConfigurableProduct\Pricing\Render\FinalPriceBox">
+            <plugin name="special_price_hide" type="PME\Hideprice\Plugin\Price"/>
+        </type>
+        
+        <type name="Magento\Catalog\Model\Product">
+            <plugin name="PME_IsSalablePlugin::after" type="PME\Hideprice\Plugin\IsSalablePlugin"/>
+        </type>
+
+        <preference type="PME\Hideprice\Block\Product\ListProduct" 
+                    for="Magento\Catalog\Block\Product\ListProduct"/>
+
+        <preference type="PME\Hideprice\Block\Product\ListProduct" 
+                    for="Magento\CatalogSearch\Block\SearchResult\ListProduct"/>
+
+        <preference type="PME\Hideprice\Block\Product\ProductsList"
+                    for="Magento\CatalogWidget\Block\Product\ProductsList"/>
+
+         <preference type ="PME\Hideprice\Block\Product\ProductList\Related"
+                    for= "Magento\Catalog\Block\Product\ProductList\Related"/>
+
+        <preference type ="PME\Hideprice\Block\Product\ProductList\Upsell"
+                    for= "Magento\Catalog\Block\Product\ProductList\Upsell"/>
+
+        <preference type = "PME\Hideprice\Block\Product\Grouped" 
+                    for= "Magento\GroupedProduct\Block\Product\View\Type\Grouped"/>
+
+</config>

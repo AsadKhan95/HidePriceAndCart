@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+            <update id="PME_Hideprice::hideprice" title="PME" module="Magento_Backend" sortOrder="70" resource="PME_Hideprice::hideprice"/>
+            <add id="PME_Hideprice::hidepriceparent" title="PME Hide Price and Cart" module="PME_Hideprice" sortOrder="72"  parent="PME_Hideprice::hideprice" resource="PME_Hideprice::hidepriceparent" />
+            <add id="PME_Hideprice::hideprice1" title="Configuration" module="PME_Hideprice" sortOrder="0" parent="PME_Hideprice::hidepriceparent" action="adminhtml/system_config/edit/section/pme_hideprice/" resource="PME_Hideprice::hideprice1"/>
+    </menu>
+</config>

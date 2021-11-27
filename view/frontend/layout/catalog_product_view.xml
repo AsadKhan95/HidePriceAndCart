@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content.aside">
+                 <referenceBlock name="catalog.product.related"  template="PME_Hideprice::product/list/items.phtml">
+                    <block class="Magento\Catalog\Block\Product\ProductList\Related" name="dummy" />
+                 </referenceBlock>
+                 
+                 <referenceBlock name="product.info.upsell" template="PME_Hideprice::product/list/items.phtml">
+                 	<block class ="Magento\Catalog\Block\Product\ProductList\Upsell" name="dummy2" />
+                 </referenceBlock>	
+        </referenceContainer>
+    </body>
+</page>
