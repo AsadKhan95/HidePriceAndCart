@@ -2,7 +2,6 @@
 namespace PME\Hideprice\Helper;
 
 use Magento\Framework\App\Helper\AbstractHelper;
-// use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Framework\App\Http\Context;
 use Magento\Customer\Model\Context as CustomerContext;
 use Magento\Cms\Model\ResourceModel\Page\CollectionFactory;
@@ -58,7 +57,6 @@ class Data extends AbstractHelper
  */
 
     public function __construct(
-        // ScopeConfigInterface $scopeConfig,
         Context $context,
         CollectionFactory $cmsCollection,
         \Magento\Framework\App\Helper\Context $helpercontext,
@@ -69,7 +67,6 @@ class Data extends AbstractHelper
         \Magento\Customer\Model\ResourceModel\Group\Collection $customerGroup
     ) {
         $this->_customerSession = $_customerSession;
-        // $this->scopeConfig = $scopeConfig;
         $this->context = $context;
         $this->_registry = $registry;
         $this->_cmsCollection = $cmsCollection;
